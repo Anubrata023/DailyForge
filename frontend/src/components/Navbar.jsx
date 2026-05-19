@@ -13,6 +13,13 @@ function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
+// Navigation Links configuration
+const navLinks = [
+  { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+  { name: "Tasks", path: "/tasks", icon: CheckSquare },
+  { name: "Routine Builder", path: "/routine-builder", icon: Calendar },
+];
+
 const Navbar = () => {
   const { token, logout } = useContext(AuthContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -42,13 +49,6 @@ const Navbar = () => {
       setIsOpen(false);
     }
   };
-
-  // Navigation Links configuration
-  const navLinks = [
-    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { name: "Tasks", path: "/tasks", icon: CheckSquare },
-    { name: "Routine Builder", path: "/routine-builder", icon: Calendar },
-  ];
 
   return (
     <motion.nav
